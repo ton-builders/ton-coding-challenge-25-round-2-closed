@@ -29,13 +29,14 @@
     <div class="container">
         <h1>Welcome to the Telegram Mini App</h1>
         <p>Developer: <strong id="developer-username">@laihowo</strong></p>
+        <p>Player: <strong id="player-username"></strong></p>
     </div>
     <script>
         const app = window.Telegram.WebApp;
         app.expand();
 
-        // Dynamically display the developer's username
-        const usernameElement = document.getElementById('developer-username');
+        // Dynamically display the player's username
+        const usernameElement = document.getElementById('player-username');
         if (app.initDataUnsafe && app.initDataUnsafe.user) {
             usernameElement.textContent = `@${app.initDataUnsafe.user.username || 'unknown'}`;
         }
