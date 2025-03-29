@@ -22,11 +22,23 @@
             color: #555;
         }
     </style>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to the Telegram Mini App</h1>
-        <p>Developer: <strong>@laihowo</strong></p>
+        <p>Developer: <strong id="developer-username">@laihowo</strong></p>
     </div>
+    <script>
+        const app = window.Telegram.WebApp;
+        app.expand();
+
+        // Dynamically display the developer's username
+        const usernameElement = document.getElementById('developer-username');
+        if (app.initDataUnsafe && app.initDataUnsafe.user) {
+            usernameElement.textContent = `@${app.initDataUnsafe.user.username || 'unknown'}`;
+        }
+    </script>
 </body>
 </html>
