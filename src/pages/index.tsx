@@ -52,7 +52,7 @@ const Home: React.FC = () => {
 
 					if (response.ok) {
 						const data = await response.json();
-						alert(data);
+						alert(data.welcomeMessage);
 					} else {
 						throw new Error('Network response with status ' + response.status);
 					}
