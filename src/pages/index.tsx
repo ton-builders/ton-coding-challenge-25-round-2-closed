@@ -19,18 +19,10 @@ const Home: React.FC = () => {
 	useEffect(() => {
 		// Ensure the Telegram Web App script is loaded and accessible
 		if (typeof window !== 'undefined' && window.Telegram) {
+
+			// Initialize the Telegram Web App with fullscreen mode
 			const tg = window.Telegram.WebApp;
-
-			// Detect if the client is on a mobile device
-			const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-			if (isMobile) {
-				// Request fullscreen mode for mobile devices
-				tg.requestFullscreen();
-			} else {
-				// Expand for non-mobile devices
-				tg.expand();
-			}
+			tg.requestFullscreen();
 
 			// Function to log debug info
 			const logDebugInfo = (message: string | object) => {
