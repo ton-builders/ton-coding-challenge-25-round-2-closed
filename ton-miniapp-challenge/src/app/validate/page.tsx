@@ -5,31 +5,21 @@ import { Section, Cell, List, Button, Avatar } from '@telegram-apps/telegram-ui'
 import { Page } from '@/components/Page';
 import { Link } from '@/components/Link/Link';
 import { retrieveLaunchParams } from '@telegram-apps/sdk';
+import { postEvent } from '@telegram-apps/sdk';
 
 
 
 export default function ValidatePage() {
+    postEvent('web_app_setup_back_button', { is_visible: true });
     const [validationResult, setValidationResult] = useState<any>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const { initDataRaw } = retrieveLaunchParams();
 
-    // const webApp = typeof window !== 'undefined' ? (window as any).Telegram?.WebApp : null;
-
     useEffect(() => {
-        // if (!webApp) {
-        //     setError('请在Telegram中打开此Mini App');
-        //     return;
-        // }
-
         const validateInitData = async () => {
             setIsLoading(true);
             try {
-                // const initData = webApp.initData;
-
-                // if (!initData) {
-                //   throw new Error('未找到initData');
-                // }
 
                 const response = await fetch('/api/validate', {
                     method: 'POST',

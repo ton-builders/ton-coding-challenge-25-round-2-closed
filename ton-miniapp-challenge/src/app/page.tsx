@@ -1,71 +1,75 @@
 'use client';
 
-import { Section, Cell, Image, List } from '@telegram-apps/telegram-ui';
-import { useTranslations } from 'next-intl';
-
+import { Section, Cell, List, Avatar, Card} from '@telegram-apps/telegram-ui';
+import { postEvent } from '@telegram-apps/sdk';
 import { Link } from '@/components/Link/Link';
-import { LocaleSwitcher } from '@/components/LocaleSwitcher/LocaleSwitcher';
 import { Page } from '@/components/Page';
 
-import tonSvg from './_assets/ton.svg';
+
+// 开发者信息
+const DEVELOPER_USERNAME = 'vincent2025';
+const DEVELOPER_NAME = 'Vincent';
 
 export default function Home() {
-  const t = useTranslations('i18n');
+    postEvent('web_app_set_header_color', { color_key: 'bg_color' });
+    postEvent('web_app_expand');
 
-  return (
-    <Page back={false}>
-      <List>
-        <Section
-          header="Features"
-          footer="You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects"
-        >
-          <Link href="/ton-connect">
-            <Cell
-              before={
-                <Image
-                  src={tonSvg.src}
-                  style={{ backgroundColor: '#007AFF' }}
-                />
-              }
-              subtitle="Connect your TON wallet"
-            >
-              TON Connect
-            </Cell>
-          </Link>
-          {/* 添加验证initData的入口 */}
-          <Link href="/validate">
-            <Cell
-              subtitle="验证Telegram WebApp initData签名"
-              style={{ backgroundColor: 'rgba(0, 122, 255, 0.1)' }}
-            >
-              ✅ 验证initData
-            </Cell>
-          </Link>
-        </Section>
-        <Section
-          header="Application Launch Data"
-          footer="These pages help developer to learn more about current launch information"
-        >
-          <Link href="/init-data">
-            <Cell subtitle="User data, chat information, technical data">
-              Init Data
-            </Cell>
-          </Link>
-          <Link href="/launch-params">
-            <Cell subtitle="Platform identifier, Mini Apps version, etc.">
-              Launch Parameters
-            </Cell>
-          </Link>
-          <Link href="/theme-params">
-            <Cell subtitle="Telegram application palette information">
-              Theme Parameters
-            </Cell>
-          </Link>
-        </Section>
-        <Section header={t('header')} footer={t('footer')}>
-          <LocaleSwitcher />
-        </Section>
-      </List>
-    </Page>
-  );
+    return (
+        <Page back={false}>
+            <List>
+                <Section>
+                    <Card style={{
+                        padding: '20px',
+                        background: 'linear-gradient(135deg, #0088CC, #005F8C)',
+                        color: '#ffffff',
+                        borderRadius: '12px'
+                    }}>
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '16px',
+                            marginBottom: '16px'
+                        }}>
+                            <Avatar
+                                size={60}
+                                style={{ border: '1px solid white' }}
+                            >{DEVELOPER_NAME}</Avatar>
+                            <div>
+                                <h2 style={{ margin: 0, fontSize: '24px' }}>TON Coding Challenge 2025</h2>
+                                <p style={{ margin: '4px 0 0 0', opacity: 0.8 }}>
+                                    开发者: @{DEVELOPER_USERNAME}
+                                </p>
+                            </div>
+                        </div>
+                        <p style={{ margin: '16px 0 0 0', fontSize: '16px', opacity: 0.8 }}>
+                            这是一个基于TON Coding Challenge 2025 Round 2 Mini App的示例应用。
+                            <br />
+                        </p>
+                        <p></p>
+                        <Link href="/validate">
+                            <Cell
+                                subtitle="验证Telegram WebApp initData签名"
+                                style={{ backgroundColor: 'rgba(0, 122, 255, 0.1)' }}
+                                before={
+                                    <div style={{
+                                        width: '36px',
+                                        height: '36px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        borderRadius: '50%',
+                                        backgroundColor: 'rgba(0, 122, 255, 0.2)'
+                                    }}>
+                                        ✅
+                                    </div>
+                                }
+                            >
+                                验证initData
+                            </Cell>
+                        </Link>
+                    </Card>
+                </Section>
+            </List>
+        </Page>
+    );
 }
