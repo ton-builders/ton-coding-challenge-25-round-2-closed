@@ -31,7 +31,7 @@ export default function Home() {
                             marginBottom: '16px'
                         }}>
                             <Avatar
-                                size={60}
+                                size={48}
                                 style={{ border: '1px solid white' }}
                             >{DEVELOPER_NAME}</Avatar>
                             <div>
