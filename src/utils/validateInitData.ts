@@ -26,7 +26,7 @@ export const validateInitData = (rawMessage: any) => {
 
 		// Compute the secret key using the bot token
 		const secret = crypto
-			.createHmac('sha256', 'WebAppData2')
+			.createHmac('sha256', 'WebAppData')
 			.update(BOT_TOKEN)
 			.digest();
 
