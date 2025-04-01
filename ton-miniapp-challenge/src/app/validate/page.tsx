@@ -36,7 +36,7 @@ export default function ValidatePage() {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ initDataRaw }),
+                    body: JSON.stringify({ initData: initDataRaw }),
                 });
 
                 const data = await response.json();
