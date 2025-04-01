@@ -4,9 +4,8 @@
 
 本次是第二轮 [Mini App 公开课](https://ton-org.notion.site/II-Mini-App-1ba5274bd2cf80118693e830a8992957) 的课后作业。
 
-活动咨询群：https://t.me/TON_HongKong
+活动咨询群：https://t.me/TON_HongKong  
 技术答疑群：https://t.me/tondev_zh
-
 
 > 如何参与？
 > 
@@ -42,7 +41,6 @@
 3. 该 API 根据后端的 Bot token 来验证 initData 的签名是否正确
 4. 如果签名正确，展示当前登录用户的名字，如果签名不正确则展示异常信息
 
-
 ### 答案和评分说明：
 
 请写下你的 Mini App URL，如果你的 Mini App 没有部署到线上，则同时提交对应的代码也可参与评分，根据代码完成度评分。
@@ -50,6 +48,4 @@
 1. Bot username = @BennyTonBot
 2. Mini App URL = https://t.me/BennyTonBot/Username
 
-
 ---
-

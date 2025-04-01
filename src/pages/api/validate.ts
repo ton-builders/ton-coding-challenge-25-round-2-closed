@@ -3,10 +3,10 @@ import { validateInitData } from '../../utils/validateInitData';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
-        const initData = req.body;
+        const rawMessage = req.body;
 
         try {
-            const { valid, userName } = await validateInitData(initData);
+            const { valid, userName } = await validateInitData(rawMessage);
 
             if (valid) {
                 res.status(200).json({ name: userName });
