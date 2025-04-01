@@ -24,11 +24,11 @@ const Home: React.FC = () => {
 				if (debugElement) {
 					if (typeof message === 'object') {
 						// Format JSON object for display
-						debugElement.innerHTML += `<pre>${JSON.stringify(
+						debugElement.innerHTML += `${JSON.stringify(
 							message,
 							null,
 							2
-						)}</pre>`;
+						)}`;
 					} else {
 						debugElement.innerHTML += `${message}\n`;
 					}
