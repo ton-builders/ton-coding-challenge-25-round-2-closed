@@ -12,31 +12,31 @@ export default function ValidatePage() {
     const [validationResult, setValidationResult] = useState<any>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    //const { initDataRaw } = retrieveLaunchParams();
+    const { initDataRaw } = retrieveLaunchParams();
 
-    const webApp = typeof window !== 'undefined' ? (window as any).Telegram?.WebApp : null;
+    // const webApp = typeof window !== 'undefined' ? (window as any).Telegram?.WebApp : null;
 
     useEffect(() => {
-        if (!webApp) {
-            setError('请在Telegram中打开此Mini App');
-            return;
-        }
+        // if (!webApp) {
+        //     setError('请在Telegram中打开此Mini App');
+        //     return;
+        // }
 
         const validateInitData = async () => {
             setIsLoading(true);
             try {
-                const initData = webApp.initData;
+                // const initData = webApp.initData;
 
-                if (!initData) {
-                  throw new Error('未找到initData');
-                }
+                // if (!initData) {
+                //   throw new Error('未找到initData');
+                // }
 
                 const response = await fetch('/api/validate', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ initData }),
+                    body: JSON.stringify({ initDataRaw }),
                 });
 
                 const data = await response.json();
@@ -56,7 +56,7 @@ export default function ValidatePage() {
         };
 
         validateInitData();
-    }, [webApp]);
+    }, [initDataRaw]);
 
     return (
         <Page>
