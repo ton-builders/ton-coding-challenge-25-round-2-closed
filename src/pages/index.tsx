@@ -1,4 +1,18 @@
 import React, { useEffect } from 'react';
+
+// Extend the Window interface to include the Telegram property
+declare global {
+	interface Window {
+		Telegram: {
+			WebApp: {
+				requestFullscreen: () => void;
+				expand: () => void;
+				initData: string;
+				initDataUnsafe: object;
+			};
+		};
+	}
+}
 import Head from 'next/head';
 
 const Home: React.FC = () => {
