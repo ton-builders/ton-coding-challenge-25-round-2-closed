@@ -1,0 +1,26 @@
+{
+  "name": "ton-coding-challenge-25-round-2",
+  "version": "1.0.0",
+  "description": "A Mini App for the TON coding challenge.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@types/react-dom": "^19.0.4",
+    "jsonwebtoken": "^9.0.2",
+    "next": "latest",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "latest",
+    "@types/react": "^19.0.12",
+    "typescript": "^5.8.2"
+  },
+  "author": "Benny LAI",
+  "license": "MIT"
+}
