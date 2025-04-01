@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import { init } from 'next/dist/compiled/webpack/webpack';
 
 const Home: React.FC = () => {
 	useEffect(() => {
@@ -8,9 +7,16 @@ const Home: React.FC = () => {
 		if (typeof window !== 'undefined' && window.Telegram) {
 			const tg = window.Telegram.WebApp;
 
-			// Request fullscreen mode
-			tg.requestFullscreen();
-			//tg.expand();
+			// Detect if the client is on a mobile device
+			const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+			if (isMobile) {
+				// Request fullscreen mode for mobile devices
+				tg.requestFullscreen();
+			} else {
+				// Expand for non-mobile devices
+				tg.expand();
+			}
 
 			// Function to log debug info
 			const logDebugInfo = (message: string | object) => {
@@ -29,14 +35,10 @@ const Home: React.FC = () => {
 				}
 			};
 
-			// Log the initDataUnsafe JSON object
-			//logDebugInfo(tg.initDataUnsafe);
-
 			const postData = async (tg: any) => {
-				const url = '/api/validate'; // Replace with your API endpoint
+				const url = '/api/validate';
 
 				try {
-					logDebugInfo('Sending POST request...');
 					const response = await fetch(url, {
 						method: 'POST',
 						headers: {
@@ -48,29 +50,19 @@ const Home: React.FC = () => {
 						}),
 					});
 
-					/*if (!response.ok) {
-						throw new Error(`HTTP error! status: ${response.status}`);
-					}*/
-
-					const data = await response.json();
-					logDebugInfo(`Response received:`);
-					logDebugInfo(data); // Log the JSON response
+					if (response.ok) {
+						const data = await response.json();
+						alert(data);
+					} else {
+						throw new Error('Network response with status ' + response.status);
+					}
 				} catch (error) {
-					logDebugInfo(`Error: ${error.message}`);
+					logDebugInfo(`Error: ${error}`);
 				}
 			};
 
 			// Call the function to make the POST request
 			postData(tg);
-
-			// Dynamically display the player's username
-			const usernameElement = document.getElementById('player-username');
-			if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
-				usernameElement.textContent = `@${
-					tg.initDataUnsafe.user.username || 'unknown'
-				}`;
-				logDebugInfo(`Player username: ${tg.initDataUnsafe.user.username}`);
-			}
 		}
 	}, []);
 
@@ -93,9 +85,7 @@ const Home: React.FC = () => {
 				<p>
 					Developer: <strong id="developer-username">@laihowo</strong>
 				</p>
-				<p>
-					Player: <strong id="player-username"></strong>
-				</p>
+
 				{/* Debug Info Section */}
 				<pre
 					id="debug-info"
@@ -107,6 +97,7 @@ const Home: React.FC = () => {
 						overflow: 'auto',
 						maxHeight: '200px',
 						border: '1px solid #ccc',
+						display: 'none',
 					}}
 				>
 					Debug Info:
