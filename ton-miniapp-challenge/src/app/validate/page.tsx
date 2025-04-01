@@ -12,7 +12,7 @@ export default function ValidatePage() {
     const [validationResult, setValidationResult] = useState<any>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const { initDataRaw } = retrieveLaunchParams();
+    //const { initDataRaw } = retrieveLaunchParams();
 
     const webApp = typeof window !== 'undefined' ? (window as any).Telegram?.WebApp : null;
 
@@ -25,24 +25,25 @@ export default function ValidatePage() {
         const validateInitData = async () => {
             setIsLoading(true);
             try {
-                // const initData = webApp.initData;
+                const initData = webApp.initData;
 
-                // if (!initData) {
-                //   throw new Error('未找到initData');
-                // }
+                if (!initData) {
+                  throw new Error('未找到initData');
+                }
 
                 const response = await fetch('/api/validate', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ initDataRaw }),
+                    body: JSON.stringify({ initData }),
                 });
 
                 const data = await response.json();
 
                 if (!response.ok) {
-                    throw new Error(data.message || '验证失败');
+                    setError(data.message);
+                    throw new Error(data.message);
                 }
 
                 setValidationResult(data);
