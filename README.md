@@ -7,14 +7,13 @@
 活动咨询群：https://t.me/TON_HongKong
 技术答疑群：https://t.me/tondev_zh
 
-
 > 如何参与？
-> 
+>
 > Fork 本仓库的代码，回答下面的问题，然后发起一个 Pull Requests 就算成功参与。
 
 ---
 
-## 任务 1：开发一个Mini App 展示基本信息 (30分)
+## 任务 1：开发一个 Mini App 展示基本信息 (30 分)
 
 ### 任务描述：
 
@@ -25,15 +24,16 @@
 
 请写下你的 Mini App URL，如果你的 Mini App 没有部署到线上，则同时提交对应的代码也可参与评分，根据代码完成度评分。
 
-1. Bot username = ?
-2. Mini App URL = ?
-3. Your Wallet address =  ?
-4. Telegram username =  ?
+1. Bot username = @alice_in_cyberland_bot
+2. Mini App URL = https://t.me/alice_in_cyberland_bot/webapp
+3. Your Wallet address = UQDlXtE7PI2N51IV4QEfIfk4Xr1v2JV11nBlPR00ZOkX0eoM
+4. Telegram username = @Hikariii03
 
-   （ 你的 TON 钱包地址将用于接受 SBT，你的Telegram 用户名用于接受 Telegram Premium 会员奖励 ）
+   （ 你的 TON 钱包地址将用于接受 SBT，你的 Telegram 用户名用于接受 Telegram Premium 会员奖励 ）
+
 ---
 
-## 任务 2：通过后端对 initData 进行验证 (70分)
+## 任务 2：通过后端对 initData 进行验证 (70 分)
 
 ### 任务描述：
 
@@ -42,14 +42,11 @@
 3. 该 API 根据后端的 Bot token 来验证 initData 的签名是否正确
 4. 如果签名正确，展示当前登录用户的名字，如果签名不正确则展示异常信息
 
-
 ### 答案和评分说明：
 
 请写下你的 Mini App URL，如果你的 Mini App 没有部署到线上，则同时提交对应的代码也可参与评分，根据代码完成度评分。
 
-1. Bot username = ?
-2. Mini App URL = ?
-
+1. Bot username = @alice_in_cyberland_bot
+2. Mini App URL = https://t.me/alice_in_cyberland_bot/webapp
 
 ---
-
