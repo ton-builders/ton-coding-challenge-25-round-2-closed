@@ -1,9 +1,10 @@
 'use client';
 
-import { Section, Cell, List, Avatar, Card} from '@telegram-apps/telegram-ui';
+import { Section, Cell, List, Avatar, Card } from '@telegram-apps/telegram-ui';
 import { postEvent } from '@telegram-apps/sdk';
 import { Link } from '@/components/Link/Link';
 import { Page } from '@/components/Page';
+import { useEffect } from 'react';
 
 
 // 开发者信息
@@ -11,9 +12,12 @@ const DEVELOPER_USERNAME = 'vincent2025';
 const DEVELOPER_NAME = 'Vincent';
 
 export default function Home() {
-    postEvent('web_app_set_header_color', { color_key: 'bg_color' });
-    postEvent('web_app_expand');
 
+    //postEvent('web_app_expand');
+    useEffect(() => {
+        postEvent('web_app_set_header_color', { color_key: 'bg_color' });
+        postEvent('web_app_request_fullscreen',);
+    }, []);
     return (
         <Page back={false}>
             <List>
