@@ -25,10 +25,10 @@
 
 请写下你的 Mini App URL，如果你的 Mini App 没有部署到线上，则同时提交对应的代码也可参与评分，根据代码完成度评分。
 
-1. Bot username = ?
+1. Bot username = testusername
 2. Mini App URL = ?
-3. Your Wallet address =  ?
-4. Telegram username =  ?
+3. Your Wallet address =  UQBPvTVcmD3IU7KAMiVx6DIa2d-8-LIzLHQlLsUE7MMA4FKa
+4. Telegram username =  @dyshko
 
    （ 你的 TON 钱包地址将用于接受 SBT，你的Telegram 用户名用于接受 Telegram Premium 会员奖励 ）
 ---
