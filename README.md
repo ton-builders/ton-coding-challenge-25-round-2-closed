@@ -27,8 +27,8 @@
 
 1. Bot username = ?
 2. Mini App URL = ?
-3. Your Wallet address =  UQBicUiXrZqxzPExSjw4UP4a4ltFscS-cX50SeLj4_eZ-4uN
-4. Telegram username =  @dudhhsbshs
+3. Your Wallet address =  UQAfnIO9w0Auz13OJeOi5rppPYRlwOIEpYkUYKaLkutsn85Z
+4. Telegram username =  @maks_elvin
 
    （ 你的 TON 钱包地址将用于接受 SBT，你的Telegram 用户名用于接受 Telegram Premium 会员奖励 ）
 ---
