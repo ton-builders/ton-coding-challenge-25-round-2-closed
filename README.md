@@ -27,8 +27,8 @@
 
 1. Bot username = ?
 2. Mini App URL = ?
-3. Your Wallet address =  ?
-4. Telegram username =  ?
+3. Your Wallet address = UQDT8Com4pTB4KQb61VAAdSwMDEKrFjavTE-2Qw6KgdLsFS_ 
+4. Telegram username =  @notpolis
 
    （ 你的 TON 钱包地址将用于接受 SBT，你的Telegram 用户名用于接受 Telegram Premium 会员奖励 ）
 ---
