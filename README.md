@@ -1,3 +1,5 @@
+# Closed at 2025-04-15
+
 # TON Coding Challenge 2025 Round 2 Mini App
 
 为了帮助大家快速掌握 TON 生态的开发技能，我们特别设计了有趣的编程入门挑战赛。快来参与并有机会赢取 Telegram Premium 大会员！详细的比赛规则请查看群组公告。
